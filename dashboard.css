@@ -1,0 +1,172 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.main-cnt{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-header-cnt{
+    width: 100%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    height: 106px;
+    display: flex;
+    align-items: center;
+    margin-left: 9.791%;
+    margin-right: 9.531%;
+}
+
+
+.nav-header-txt-cnt{
+    text-align: left;
+    font: normal normal bold 22px/25px Montserrat;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.header-txt-emp{
+    text-align: left;
+    font: normal normal bold 22px/25px Montserrat;
+    letter-spacing: 0px;
+    color: #82A70C;
+    text-transform: capitalize;
+}
+
+.header-txt-pay{
+    text-align: left;
+    font: normal normal bold 22px/25px Montserrat;
+    letter-spacing: 0px;
+    color: #42515F;
+    text-transform: capitalize;
+}
+
+.main-dashborad-cnt{
+    width: 80.677%;
+    background: #F7F7F7 0% 0% no-repeat padding-box;
+    margin-left: 9.7916%;
+    margin-right: 9.531%;
+    height: calc(100vh - 106px);
+}
+
+.dashborad-head-txt-cnt{
+    text-align: left;
+    font: normal normal bold 28px/25px Roboto;  
+    letter-spacing: 0px;
+    color: #42515F;
+    opacity: 1;
+}
+.main-dashborad-head-cnt{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 147px; */
+}
+
+.dashborad-head-options-cnt{
+    width: 20.33%;
+    height: 56px;
+    display: flex;
+    gap: 1.3557%;
+}
+
+.dashborad-head-options-search{
+    width: 24.44%;
+    height: 55px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 3px #00000029;
+    border-radius: 28px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i{
+        font-size: 20px;
+    }
+}
+
+.dashborad-head-options-adduser-cnt{
+    width: 70.25%;
+    height: 55px;
+    background: #82A70C 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options-adduser-cnt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.dashborad-head-options-adduser-plus{
+    width: 10.99%;
+    height: 24px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+        color: white;
+    }
+}
+
+.dashborad-head-options-adduser-txt{
+    width: 85.39%;
+    height: 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+        text-decoration: none;
+        text-align: left;
+        font: normal normal normal 15px Roboto;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+    }
+}
+.main-dashborad-body-cnt{
+    width: 100%;
+}
+
+table{
+    width: 100%;
+    background: #F7F7F7 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border: 1px solid #E3E3E3;
+    border-collapse: collapse;
+}
+
+table thead{
+    width: 100%;
+    height: 67px;
+    background: #42515F 0% 0% no-repeat padding-box;
+    border-radius: 3px 3px 0px 0px;
+    opacity: 1;
+}
+
+#profile-logo{
+    width: 7.165%;
+}
+#dashborad-head-name{
+    text-align: left;
+    width: 27.372%;
+}
+#dashborad-head-gender{
+    width: 16.13%;
+    text-align: left;
+}
+#dashborad-head-dep{
+    width: 19.88%;
+    text-align: left;
+}
