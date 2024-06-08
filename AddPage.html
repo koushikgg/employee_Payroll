@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main form</title>
+    <link rel="stylesheet" href="AddPage.css">
+</head>
+<body>
+    <div class="main-cnt">
+        <div class="nav-header-cnt">
+            <div class="nav-header-img-cnt">
+                <a href="" id ='home-button'><img src="asset/logo.png" alt="check Internet"></a>
+            </div>
+            <div>
+                <p class="header-txt-emp">EMPLOYEE</p>
+                <P class="header-txt-pay">PAYROLL</P>
+            </div>
+        </div>
+        <div class="form-body-main-cnt">
+            <div class="form-body-cnt" >
+                <div class="body-head-txt-cnt">
+                    <p>Employee Payroll Form</p>
+                </div>
+                <form class="body-inp-cnt">
+                    <div class="inp-name-cnt">
+                        <div class="inp-name-title-cnt">
+                            <p>Name</p>
+                        </div>
+                        <div class="inp-name-inp-cnt">
+                            <input id="input-name" idtype="text" placeholder="">
+                            <div id="error-display">
+                                <p>Username Must contain only characters</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-img-cnt">
+                        <div class="profile-img-txt">
+                            <p>Profile image</p>
+                        </div>
+                        <div class="profile-img-select">
+                            <div class="dis-fel-cent">
+                                <input type="radio" id="profile1" name="profile" class="profile-photo" value="./asset/profile1.png"><label for="profile1"><img src="asset/profile1.png" alt=""></label>
+                            </div>
+                            <div class="dis-fel-cent">
+                                <input type="radio" id="profile2" name="profile" class="profile-photo" value="asset/profile2.png"><label for="profile2"><img src="asset/profile2.png" alt=""></label>
+                            </div>
+                            <div class="dis-fel-cent">
+                                <input type="radio" id="profile3" name="profile" class="profile-photo" value="asset/profile4.png"><label for="profile3"><img src="asset/profile4.png" alt=""></label>
+                            </div>
+                            <div class="dis-fel-cent">
+                                <input type="radio" id="profile4" name="profile" class="profile-photo" value="asset/profile1.png"><label for="profile4"><img src="asset/profile1.png" alt=""></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gender-cnt">
+                        <div class="gender-txt-cnt">
+                            <p>Gender</p>
+                        </div>
+                        <div class="gender-inp-cnt">
+                            <div class="dis-fel-cent">
+                                <input type="radio" id="gender1" name="gender" class="genderValue" value="Male"><label for="gender1"><p>Male</p></label>
+                            </div>
+                            <div class="dis-fel-cent">
+                                <input type="radio" id="gender2" name="gender" class="genderValue" value="Female"><label for="gender2"><p>Female </p></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="department-inp-cnt">
+                        <div class="department-txt-cnt">
+                            <p>Department</p>
+                        </div>
+                        <div class="department-inp">
+                            <div class="dis-fel-cent-ckb">
+                                <input type="checkbox" id="dep1" name="dep" class="depValue" value="HR"><label for="dep1"><p>HR</p></label>
+                            </div>
+                            <div class="dis-fel-cent-ckb">
+                                <input type="checkbox" id="dep2" name="dep" class="depValue" value="Sales"><label for="dep2"><p>Sales </p></label>
+                            </div>
+                            <div class="dis-fel-cent-ckb">
+                                <input type="checkbox" id="dep3" name="dep" class="depValue" value="Finance"><label for="dep3"><p>Finance</p></label>
+                            </div>
+                            <div class="dis-fel-cent-ckb">
+                                <input type="checkbox" id="dep4" name="dep" class="depValue" value="Engineer"><label for="dep4"><p>Engineer</p></label>
+                            </div>
+                            <div class="dis-fel-cent-ckb">
+                                <input type="checkbox" id="dep5" name="dep" class="depValue" value="Others"><label for="dep5"><p>Others</p></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salary-cnt">
+                        <div class="salary-cnt-txt">
+                            <p>Salary</p>
+                        </div>
+                        <div class="salary-cnt-inp">
+                            <select name="salary" id="salary" >
+                                <option value=""><p>Select Salary</p></option>
+                                <option value="10,000"><p>10,000</p></option>
+                                <option value="20,000"><p>20,000</p></option>
+                                <option value="30,000"><p>30,000</p></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="startdate-cnt">
+                        <div class="startdate-txt">
+                            <p>Start Date</p>
+                        </div>
+                        <div class="startdate-inp">
+                            <div class="startdate-day day-select">
+                                <select name="startDate" id="day" >
+                                    <option value=""><p>Day</p></option>
+                                    <option value="1"><p>1</p></option>
+                                    <option value="2"><p>2</p></option>
+                                    <option value="3"><p>3</p></option>
+                                    <option value="4"><p>4</p></option>
+                                    <option value="5"><p>5</p></option>
+                                    <option value="6"><p>6</p></option>
+                                    <option value="7"><p>7</p></option>
+                                    <option value="8"><p>8</p></option>
+                                    <option value="9"><p>9</p></option>
+                                    <option value="10"><p>10</p></option>
+                                    <option value="11"><p>11</p></option>
+                                    <option value="12"><p>12</p></option>
+                                    <option value="13"><p>13</p></option>
+                                    <option value="14"><p>14</p></option>
+                                    <option value="15"><p>15</p></option>
+                                    <option value="16"><p>16</p></option>
+                                    <option value="17"><p>17</p></option>
+                                    <option value="18"><p>18</p></option>
+                                    <option value="19"><p>19</p></option>
+                                    <option value="20"><p>20</p></option>
+                                    <option value="21"><p>21</p></option>
+                                    <option value="22"><p>22</p></option>
+                                    <option value="23"><p>23</p></option>
+                                    <option value="24"><p>24</p></option>
+                                    <option value="25"><p>25</p></option>
+                                    <option value="26"><p>26</p></option>
+                                    <option value="27"><p>27</p></option>
+                                    <option value="28"><p>28</p></option>
+                                    <option value="29"><p>29</p></option>
+                                    <option value="30"><p>30</p></option>
+                                    <option value="31"><p>31</p></option>
+
+                                </select>
+                            </div>
+                            <div class="startdate-day month-select" >
+                                <select name="startDate" id="month" >
+                                    <option value=""><p>Month</p></option>
+                                    <option value="JAN"><p>JAN</p></option>
+                                    <option value="FEB"><p>FEB</p></option>
+                                    <option value="MAR"><p>MAR</p></option>
+                                    <option value="APR"><p>APR</p></option>
+                                    <option value="MAY"><p>MAY</p></option>
+                                    <option value="JUN"><p>JUN</p></option>
+                                    <option value="JUL"><p>JUL</p></option>
+                                    <option value="AUG"><p>AUG</p></option>
+                                    <option value="SEP"><p>SEP</p></option>
+                                    <option value="OCT"><p>OCT</p></option>
+                                    <option value="NOV"><p>NOV</p></option>
+                                    <option value="DEC"><p>DEC</p></option>
+                                </select>
+                            </div>
+                            <div class="startdate-day">
+                                <select name="startDate" id="year" >
+                                    <option value=""><p>Year</p></option>
+                                    <option value="1995"><p>1995</p></option>
+                                    <option value="1996"><p>1996</p></option>
+                                    <option value="1997"><p>1997</p></option>
+                                    <option value="1998"><p>1998</p></option>
+                                    <option value="1999"><p>1999</p></option>
+                                    <option value="2000"><p>2000</p></option>
+                                    <option value="2001"><p>2001</p></option>
+                                    <option value="2002"><p>2002</p></option>
+                                    <option value="2003"><p>2003</p></option>
+                                    <option value="2004"><p>2004</p></option>
+                                    <option value="2005"><p>2005</p></option>
+                                    <option value="2006"><p>2006</p></option>
+                                    <option value="2007"><p>2007</p></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notes-cnt"> 
+                        <div class="notes-txt">
+                            <p>Notes</p>
+                        </div>
+                        <div class="notes-inp">
+                            <input id="note" type="text" placeholder="Optional">
+                        </div>
+                    </div>
+                    <div class="body-butons-cnt">
+                        <div class="cancel-btn">
+                            <button id="cancel-button" class="hover-response"><p>Cancel</p></button>
+                        </div>
+                        <div class="sub-rest-btn">
+                            <button id="btn1" class="hover-response"><p>Submit</p></button>
+                            <button id="btn2" onclick="resetForm()" class="hover-response"><p>Reset</p></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script src="AddPage.js"></script>
+</body>
+</html>
