@@ -1,3 +1,4 @@
+
 const cancel = document.getElementById('cancel-button');
 cancel.addEventListener('click', () => {
     window.open('http://127.0.0.1:5500/Dashboard.html');
@@ -8,6 +9,50 @@ home.addEventListener('click', () => {
     window.open('http://127.0.0.1:5500/Dashboard.html');
 });
 
+async function postData(url, data) {
+    try {
+        const response = await fetch(url, {
+            method: 'POST', // Specify the HTTP method
+            headers: {
+                'Content-Type': 'application/json', // Specify content type
+            },
+            body: JSON.stringify(data), // Convert the data object to a JSON string
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const responseData = await response.json(); // Parse JSON response
+        return responseData;
+    } catch (error) {
+        console.error('Error posting data:', error);
+        throw error;
+    }
+}
+
+async function updateData(url, data) {
+    try {
+        const response = await fetch(url, {
+            method: 'PUT', // Use PUT for updating data
+            headers: {
+                'Content-Type': 'application/json', // Specify content type
+            },
+            body: JSON.stringify(data), // Convert the data object to a JSON string
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const responseData = await response.json(); // Parse JSON response
+        return responseData;
+    } catch (error) {
+        console.error('Error updating data:', error);
+        throw error;
+    }
+}
+
 
 // let empNotes = document.getElementById('note')
 let errorName = document.getElementById('error-display');
@@ -16,6 +61,8 @@ function checkCharacters(input) {
     var regex = /^[a-zA-Z]+$/;
     return regex.test(input)
 }
+
+
 document.addEventListener('DOMContentLoaded', () => {
     var editEmpId = 0;
     let empName = document.getElementById('input-name')
@@ -29,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let empNotes = document.getElementById('note')
 
     editData = JSON.parse(localStorage.getItem('editFile'));
+    console.log(editData);
     if (editData) {
         editData.forEach(empToEdit => {
             console.log(empToEdit);
@@ -64,21 +112,21 @@ document.addEventListener('DOMContentLoaded', () => {
             empYear.value = empToEdit.year;
             empNotes.value = empToEdit.notes
             editEmpId = empToEdit.id
-            // console.log(editEmpId);
+            console.log(editEmpId);
         })
         localStorage.removeItem('editFile');
     };
 
-function recallValue(){
-    return editEmpId
-}
+    function recallValue() {
+        return editEmpId
+    }
 
     const submit = document.getElementById('btn1');
     submit.addEventListener('click', (submision) => {
         submision.preventDefault();
         // console.log(empName.value);
-        var idCheck=recallValue();
-        
+        var idCheck = recallValue();
+
         let empName = document.getElementById('input-name')
         let empProfile = document.querySelector("input[name='profile']:checked")
         let empGender = document.querySelector("input[name='gender']:checked")
@@ -132,7 +180,7 @@ function recallValue(){
         }
         let storageOfData = JSON.parse(localStorage.getItem('employeeData')) || [];
         let condition = true;
-        storageOfData= storageOfData.map(newitem=>{
+        storageOfData = storageOfData.map(newitem => {
             console.log(idCheck);
             if (newitem.id == idCheck) {
                 condition = false
@@ -174,15 +222,45 @@ function recallValue(){
             }
             storageOfData.push(data);
         }
-        window.open('http://127.0.0.1:5500/Dashboard.html');
-        localStorage.removeItem('editFile');
         // inputcheck()
+        if (!idCheck) {
+            postData('http://localhost:3000/profiles',{
+                name: empName.value,
+                profile: empProfile.value,
+                gender: empGender.value,
+                department: empDepartment,
+                salary: empSalary.value,
+                day: empDay.value,
+                month: empMonth.value,
+                year: empYear.value,
+                id: storageOfData.length + 1,
+                startDate: empDay.value + " " + empMonth.value + " " + empYear.value,
+                notes: empNotes.value
+                
+            })
+        } else{
+            let updatedData= {
+                id:idCheck,
+                name: empName.value,
+                profile: empProfile.value,
+                gender: empGender.value,
+                department: empDepartment,
+                salary: empSalary.value,
+                day: empDay.value,
+                month: empMonth.value,
+                year: empYear.value,
+                startDate: empDay.value + " " + empMonth.value + " " + empYear.value,
+                notes: empNotes.value
+            }
+            updateData(`http://localhost:3000/profiles/${idCheck}`, updatedData)
+        }
+        localStorage.removeItem('editFile');
         localStorage.setItem("employeeData", JSON.stringify(storageOfData));
-
+        window.open('http://127.0.0.1:5500/Dashboard.html');
     })
 
     reset = document.getElementById('btn2')
-    reset.addEventListener('click',()=>{
+    reset.addEventListener('click', () => {
         formReset.reset();
     })
 });

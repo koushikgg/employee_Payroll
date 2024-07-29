@@ -1,0 +1,34 @@
+{
+  "profiles": [
+    {
+      "id": "2",
+      "name": "koushik",
+      "profile": "asset/profile4.png",
+      "gender": "Male",
+      "department": [
+        "Engineer"
+      ],
+      "salary": "20,000",
+      "day": "18",
+      "month": "NOV",
+      "year": "2004",
+      "startDate": "18 NOV 2004",
+      "notes": "dfef"
+    },
+    {
+      "id": "4",
+      "name": "virat",
+      "profile": "asset/profile4.png",
+      "gender": "Male",
+      "department": [
+        "Finance"
+      ],
+      "salary": "30,000",
+      "day": "21",
+      "month": "OCT",
+      "year": "2002",
+      "startDate": "21 OCT 2002",
+      "notes": "qdqd"
+    }
+  ]
+}
