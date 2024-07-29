@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let empYear = document.getElementById("year")
     let empNotes = document.getElementById('note')
 
-    editData = JSON.parse(localStorage.getItem('editFile'));
+    let editData = JSON.parse(localStorage.getItem('editFile'));
     console.log(editData);
     if (editData) {
         editData.forEach(empToEdit => {
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     day: empDay.value,
                     month: empMonth.value,
                     year: empYear.value,
-                    id: idCheck,
+                    id: `${idCheck}`,
                     startDate: empDay.value + " " + empMonth.value + " " + empYear.value,
                     notes: empNotes.value
                 }
@@ -204,8 +204,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return newitem
         })
 
+
         if (condition) {
-            console.log('added new');
+            let count = JSON.parse(localStorage.getItem('count')) || 0;
+            count += 1;
             let data = {
                 name: empName.value,
                 profile: empProfile.value,
@@ -215,32 +217,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 day: empDay.value,
                 month: empMonth.value,
                 year: empYear.value,
-                id: storageOfData.length + 1,
+                id: `${count}`,
                 startDate: empDay.value + " " + empMonth.value + " " + empYear.value,
                 notes: empNotes.value
-
             }
+            localStorage.setItem('count', JSON.stringify(count));
+            console.log('added new');
             storageOfData.push(data);
+            postData('http://localhost:3000/profiles', data)
         }
         // inputcheck()
-        if (!idCheck) {
-            postData('http://localhost:3000/profiles',{
-                name: empName.value,
-                profile: empProfile.value,
-                gender: empGender.value,
-                department: empDepartment,
-                salary: empSalary.value,
-                day: empDay.value,
-                month: empMonth.value,
-                year: empYear.value,
-                id: storageOfData.length + 1,
-                startDate: empDay.value + " " + empMonth.value + " " + empYear.value,
-                notes: empNotes.value
-                
-            })
-        } else{
-            let updatedData= {
-                id:idCheck,
+        if (idCheck) {
+            let updatedData = {
+                id: idCheck,
                 name: empName.value,
                 profile: empProfile.value,
                 gender: empGender.value,
@@ -253,8 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 notes: empNotes.value
             }
             updateData(`http://localhost:3000/profiles/${idCheck}`, updatedData)
+            localStorage.removeItem('editFile');
         }
-        localStorage.removeItem('editFile');
         localStorage.setItem("employeeData", JSON.stringify(storageOfData));
         window.open('http://127.0.0.1:5500/Dashboard.html');
     })

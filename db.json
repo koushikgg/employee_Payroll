@@ -1,34 +1,35 @@
 {
   "profiles": [
     {
-      "id": "2",
+      "id": "9",
       "name": "koushik",
-      "profile": "asset/profile4.png",
+      "profile": "asset/profile2.png",
       "gender": "Male",
       "department": [
         "Engineer"
       ],
-      "salary": "20,000",
+      "salary": "10,000",
+      "day": "19",
+      "month": "SEP",
+      "year": "2004",
+      "startDate": "19 SEP 2004",
+      "notes": "rtyu"
+    },
+    {
+      "id": "10",
+      "name": "newuser",
+      "profile": "./asset/profile1.png",
+      "gender": "Female",
+      "department": [
+        "HR",
+        "Sales"
+      ],
+      "salary": "30,000",
       "day": "18",
       "month": "NOV",
       "year": "2004",
       "startDate": "18 NOV 2004",
-      "notes": "dfef"
-    },
-    {
-      "id": "4",
-      "name": "virat",
-      "profile": "asset/profile4.png",
-      "gender": "Male",
-      "department": [
-        "Finance"
-      ],
-      "salary": "30,000",
-      "day": "21",
-      "month": "OCT",
-      "year": "2002",
-      "startDate": "21 OCT 2002",
-      "notes": "qdqd"
+      "notes": "asdfgh"
     }
   ]
 }

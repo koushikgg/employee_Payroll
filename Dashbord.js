@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 async function deleteOption(id) {
     let employeeData = JSON.parse(localStorage.getItem('employeeData'))
-    await deleteData(`http://localhost:3000/profiles/${name}`)  
+    await deleteData(`http://localhost:3000/profiles/${id}`)  
     window.open('http://127.0.0.1:5500/Dashboard.html');
-    updatedList = employeeData.filter(userData => userData.name != id)
+    updatedList = employeeData.filter(userData => userData.id != id)
     localStorage.removeItem('employeeData');
     localStorage.setItem('employeeData', JSON.stringify(updatedList))
 }
@@ -158,7 +158,10 @@ async function deleteOption(id) {
 
 function updateOption(id) {
     let employeeData = JSON.parse(localStorage.getItem('employeeData'))
+    console.log(employeeData);
     editData = employeeData.find(employee => employee.id == id);
+
+    console.log(editData);
     editStorage = []
     editStorage.push(editData)
     console.log(editStorage);
